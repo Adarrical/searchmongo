@@ -1,0 +1,44 @@
+"IPTC:Keywords"
+"EXIF:CreateDate"
+"SourceFile"
+"File:FileName"
+"File:Directory"
+"EXIF:Make"
+"EXIF:Model"
+"EXIF:Copyright"
+"EXIF:ExposureTime"
+"EXIF:ISO"
+"EXIF:ApertureValue"
+"EXIF:CreateDate"
+"EXIF:FocalLength"
+"EXIF:FocalLengthIn35mmFormat"
+"EXIF:LensModel"
+
+{ "$and": [
+         { "$or": [ {"IPTC:Keywords": { "$all":["gaia"] } }  , {"IPTC:Keywords": { "$all":["paisajes"] } }  ]},
+         { "$or": [ {"EXIF:ISO":{"$ge":"400"} }, {"EXIF:ISO":{"$le":"1600"}}]}
+        ]
+}
+
+
+{ "$and": [
+         { "$or": [ {"IPTC:Keywords": { "$all":["urbanas"] } }  , {"IPTC:Keywords": { "$all":["paisajes"] } }  ]},
+         { "$or": [ {"EXIF:ISO":{"$eq":500} } ]}
+        ]
+}
+
+
+{"$and":[
+{"$or":[{ "IPTC:Keywords": "playa"} , { "IPTC:Keywords": "beach"}]}]} 
+
+{"$and":[
+{"$or":[{ "IPTC:Keywords": { "$all":["gaia","vega"]}}]},
+{"$or":[{ "IPTC:Keywords": "beach"},{ "IPTC:Keywords": "platja"}]},
+{"$or":[{"EXIF:ISO":{"$eq":200}}]}]}
+
+2018:12:29 09:27:13
+
+{"$and":[
+{"$or":[{ "IPTC:Keywords": "mcros"},{ "IPTC:Keywords": "macro"}]},
+{"$or":[{"EXIF:CreateDate":{"$gte":"2016:03:01"}}]},
+{"$or":[{"EXIF:CreateDate":{"$lte":"2016:03:31"}}]}]}
